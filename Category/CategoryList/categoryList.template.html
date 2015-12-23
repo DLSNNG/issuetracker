@@ -1,0 +1,11 @@
+<template name="categoryList">
+	<ul class="list-group">
+		{{#each categories}}
+			{{> categoryListItem}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="categoryListItem">
+	<a href="/category/{{_id}}"><li class="list-group-item">{{name}}</li></a>
+</template>

@@ -1,5 +1,5 @@
 Router.route('/departments', {
-	template: 'departmentSearch',
+	template: 'departmentSearchPage',
 	waitOn: function() {
 		return Meteor.subscribe('departments');
 	}

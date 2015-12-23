@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 	Router.route('/users', {
-		template: 'userSearch',
+		template: 'userSearchPage',
 		data: function() {
 			return Meteor.users.find({});
 		}

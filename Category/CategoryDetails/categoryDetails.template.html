@@ -1,0 +1,9 @@
+<template name="categoryDetails">
+	<h3>{{name}}</h3>
+	<hr>
+	<div class="well">
+		<h4>Description</h4>
+		{{description}}
+	</div>
+	<strong>Created by:</strong> {{> username _id = createdBy}}
+</template>

@@ -1,12 +1,12 @@
-<template name="departmentsListPage">
+<template name="departmentListPage">
+	<h3>Departments</h3>
+	<hr>
 	<div class="col-md-5">
-		{{> departmentsList}}
+		{{> departmentList}}
 	</div>
 </template>
 
-<template name="departmentsList">
-	<h3>Departments</h3>
-	<hr>
+<template name="departmentList">
 	<ul class="list-group">
 		{{#each departments}}
 			{{> departmentListItem}}

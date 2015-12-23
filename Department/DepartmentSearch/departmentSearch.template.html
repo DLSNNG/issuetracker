@@ -1,5 +1,13 @@
+<template name="departmentSearchPage">
+	<h3>Departments</h3>
+	{{> departmentSearch}}
+	<hr>
+	{{> departmentList searchParams = searchParams}}
+</template>
+    
+
 <template name="departmentSearch">
-	<input type="text" class="form-control" id="department-search-name" placeholder="User to search for" autocomplete="off" list="select-department">
+	<input type="text" class="form-control" id="department-search-name" placeholder="Department to search for" autocomplete="off" list="select-department">
 	<datalist id="select-department" name="selectDepartment">
 	  {{#each departments}}
 	  	{{> departmentOption}}

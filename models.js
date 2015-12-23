@@ -24,6 +24,14 @@ Schema.Category = new SimpleSchema({
 		type: String,
 		optional: true
 	},
+	createdBy: {
+		type: String,
+		autoValue: function() {
+			if (this.isInsert) {
+				return Meteor.userId();
+			}
+		}
+	},
 	createdDate: {
 		type: Date,
 		autoValue: function() {
@@ -39,10 +47,10 @@ Schema.Ticket = new SimpleSchema({
 		type: String
 	},
 	createdBy: {
-		type: Schema.User,
+		type: String,
 		autoValue: function() {
 			if (this.isInsert) {
-				return Meteor.user();
+				return Meteor.userId();
 			}
 		}
 	},

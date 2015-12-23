@@ -1,3 +1,12 @@
+<template name="userSearchPage">
+	<h3>Users</h3>
+	{{> userSearch}}
+	<hr>
+	{{> userList searchParams = searchParams}}
+</template>
+    
+
+
 <template name="userSearch">
 	<input type="text" class="form-control" id="user-search-name" placeholder="User to search for" autocomplete="off" list="select-user">
 	<datalist id="select-user" name="selectUser">

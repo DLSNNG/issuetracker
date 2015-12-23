@@ -1,0 +1,20 @@
+<template name="categorySearchPage">
+	<h3>Categories</h3>
+	{{> categorySearch}}
+	<hr>
+	{{> categoryList searchParams = searchParams}}
+</template>
+    
+
+<template name="categorySearch">
+	<input type="text" class="form-control" id="category-search-name" placeholder="Category to search for" autocomplete="off" list="select-category">
+	<datalist id="select-category" name="selectCategory">
+	  {{#each categories}}
+	  	{{> categoryOption}}
+	  {{/each}}
+	</datalist>
+</template>
+
+<template name="categoryOption">
+	<option id="{{name}}" data-id={{_id}} value={{name}}></option>
+</template>
