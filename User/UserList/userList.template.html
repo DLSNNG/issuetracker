@@ -1,0 +1,11 @@
+<template name="userList">
+	<ul class="list-group">
+		{{#each users}}
+			{{> userListItem}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="userListItem">
+	<li class="list-group-item">{{username}}</li>
+</template>

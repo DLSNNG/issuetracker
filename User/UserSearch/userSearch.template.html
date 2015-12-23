@@ -1,0 +1,12 @@
+<template name="userSearch">
+	<input type="text" class="form-control" id="user-search-name" placeholder="User to search for" autocomplete="off" list="select-user">
+	<datalist id="select-user" name="selectUser">
+	  {{#each users}}
+	  	{{> userOption}}
+	  {{/each}}
+	</datalist>
+</template>
+
+<template name="userOption">
+	<option id="{{username}}" data-id={{_id}} value={{username}}></option>
+</template>

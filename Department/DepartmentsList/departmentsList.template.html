@@ -1,0 +1,26 @@
+<template name="departmentsListPage">
+	<div class="col-md-5">
+		{{> departmentsList}}
+	</div>
+</template>
+
+<template name="departmentsList">
+	<h3>Departments</h3>
+	<hr>
+	<ul class="list-group">
+		{{#each departments}}
+			{{> departmentListItem}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="departmentListItem">
+	<li class="list-group-item">
+		{{name}}
+		{{#if isInRole 'dept-admin' name }}
+			<a href="/department/{{_id}}">
+				<button class="btn btn-xs btn-primary pull-right">Edit</button>
+			</a>
+		{{/if}}
+	</li>
+</template>

@@ -1,6 +1,6 @@
 
 Departments = new Mongo.Collection("Departments");
-Projects = new Mongo.Collection("Projects");
+Categories = new Mongo.Collection("Categories");
 Tickets = new Mongo.Collection("Tickets");
 
 
@@ -16,21 +16,13 @@ Schema.Department = new SimpleSchema({
 	}
 });
 
-Schema.Project = new SimpleSchema({
+Schema.Category = new SimpleSchema({
 	name: {
 		type: String
 	},
 	description: {
 		type: String,
 		optional: true
-	},
-	owner: {
-		type: Schema.User,
-		autoValue: function() {
-			if (this.isInsert) {
-				return Meteor.user();
-			}
-		}
 	},
 	createdDate: {
 		type: Date,
@@ -145,5 +137,5 @@ Schema.User = new SimpleSchema({
 
 Meteor.users.attachSchema(Schema.User);
 Departments.attachSchema(Schema.Department);
-Projects.attachSchema(Schema.Project);
+Categories.attachSchema(Schema.Category);
 Tickets.attachSchema(Schema.Ticket);

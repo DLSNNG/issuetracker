@@ -1,5 +1,4 @@
 if (Meteor.isClient) {
-  // This code only runs on the client
   Template.addDepartmentForm.events({
       "submit .add-department-form": function(event) {
         event.preventDefault();
@@ -13,17 +12,5 @@ if (Meteor.isClient) {
           }
         });
       }
-  });
-
-  Template.departmentsList.helpers({
-    departments: function() {
-      return Departments.find({}, {
-        transform: function(doc) {
-          var newDoc = doc;
-          
-          return newDoc;
-        }
-      });
-    }
   });
 }

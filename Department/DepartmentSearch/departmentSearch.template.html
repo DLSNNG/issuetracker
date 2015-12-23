@@ -1,0 +1,12 @@
+<template name="departmentSearch">
+	<input type="text" class="form-control" id="department-search-name" placeholder="User to search for" autocomplete="off" list="select-department">
+	<datalist id="select-department" name="selectDepartment">
+	  {{#each departments}}
+	  	{{> departmentOption}}
+	  {{/each}}
+	</datalist>
+</template>
+
+<template name="departmentOption">
+	<option id="{{name}}" data-id={{_id}} value={{name}}></option>
+</template>

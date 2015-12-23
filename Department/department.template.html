@@ -1,51 +1,6 @@
-<template name="addDepartmentPage">
-	{{> addDepartmentForm}}
-</template>
-
-<template name="departmentsListPage">
-	<div class="col-md-5">
-		{{> departmentsList}}
-	</div>
-</template>
-   
-
-<template name="addDepartmentForm">
-	<form class="add-department-form">
-		<h3>Add Department</h3>
-		<hr>
-		<input type="text" name="name" class="form-control" placeholder="Name">
-		<input type="submit" value="Add Department" class="form-control">
-	</form>
-</template>
-
-<template name="departmentsList">
-	<h3>Departments</h3>
-	<hr>
-	<ul class="list-group">
-		{{#each departments}}
-			{{> departmentListItem}}
-		{{/each}}
-	</ul>
-</template>
-
-<template name="departmentListItem">
-	<li class="list-group-item">
-		{{name}}
-		{{#if isInRole 'dept-admin' name }}
-			<a href="/department/{{_id}}">
-				<button class="btn btn-xs btn-primary pull-right">Edit</button>
-			</a>
-		{{/if}}
-	</li>
-</template>
-
 <template name="editDepartmentPage">
 	<h3>{{name}}</h3>
 	{{#each members}}
 		{{data}}
 	{{/each}}
-</template>
-
-<template name="userListItem">
-	<li>{{name}}</li>
 </template>
