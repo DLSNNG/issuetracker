@@ -1,0 +1,17 @@
+<template name="ticketListPage">
+	<h3>Tickets</h3>
+	<hr>
+	{{> ticketList}}
+</template>
+
+<template name="ticketList">
+	<ul class="list-group">
+		{{#each tickets}}
+			{{> ticketListItem}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="ticketListItem">
+	<a href="/ticket/{{_id}}"><li class="list-group-item">{{title}}</li></a>
+</template>

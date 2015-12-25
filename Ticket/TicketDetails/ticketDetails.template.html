@@ -1,0 +1,20 @@
+<template name="ticketDetails">
+	<h3>{{title}}</h3>
+	<hr>
+	<h4>Issue</h4>
+	<div class="well">
+		{{issue}}
+	</div>
+	<h4>Status</h4>
+	<div class="well">
+		{{status}}
+	</div>
+	<h4>Category</h4>
+	<div class="well">
+		{{category.name}}
+	</div>
+	<h4>Added on</h4>
+	<div class="well">
+		{{dateTime createdDate}}
+	</div>
+</template>

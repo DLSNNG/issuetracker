@@ -1,0 +1,9 @@
+<template name="addTicketForm">
+	<form class="add-ticket-form">
+		<input type="text" name="ticketTitle" class="form-control" placeholder="Title">
+		<textarea name="issue" class="form-control" placeholder="Description of the Issue"></textarea>
+		<input type="number" name="priority" class="form-control" placeholder="5" min="1" max="5">
+		{{> categorySearch}}
+		<input type="submit" value="Submit Ticket" class="form-control">
+	</form>
+</template>

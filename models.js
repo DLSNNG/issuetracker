@@ -43,6 +43,9 @@ Schema.Category = new SimpleSchema({
 });
 
 Schema.Ticket = new SimpleSchema({
+	title: {
+		type: String
+	},
 	issue: {
 		type: String
 	},
@@ -83,6 +86,9 @@ Schema.Ticket = new SimpleSchema({
 				return 5;
 			}
 		}
+	},
+	category: {
+		type: Schema.Category
 	}
 })
 

@@ -1,0 +1,29 @@
+<template name="userDetails">
+	<h3>{{username}}</h3>
+	<hr>
+	<div class="well">
+		{{> groups userId = _id}}
+	</div>
+</template>
+
+<template name="groups">
+	<h4>Groups</h4>
+	<ul class="list-group">
+		{{#each groups}}
+		<li class="list-group-item">
+			{{this}}
+		</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="roles">
+	<h4>Roles</h4>
+	<ul class="list-group">
+		{{#each roles}}
+		<li class="list-group-item">
+			{{this}}
+		</li>
+		{{/each}}
+	</ul>
+</template>

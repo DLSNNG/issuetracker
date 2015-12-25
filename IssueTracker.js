@@ -12,7 +12,7 @@ if (Meteor.isServer) {
         password: 'Admin1234'
       });
 
-      Roles.addUsersToRoles(id, ['admin', 'dept-admin'], Roles.GLOBAL_GROUP);
+      Roles.addUsersToRoles(id, ['Admin'], Roles.GLOBAL_GROUP);
     }
   });
 
@@ -35,5 +35,9 @@ if (Meteor.isServer) {
 
   Meteor.publish('categories', function() {
     return Categories.find({});
-  })
+  });
+
+  Meteor.publish('tickets', function() {
+    return Tickets.find({});
+  });
 }

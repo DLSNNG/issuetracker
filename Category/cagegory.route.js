@@ -1,4 +1,4 @@
-Router.route('/category/add', {
+Router.route('/categories/add', {
 	template: 'addCategoryForm',
 	data: function() {
 		return Categories.find({});
