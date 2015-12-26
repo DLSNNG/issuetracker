@@ -1,8 +1,5 @@
 Router.route('/departments', {
-	template: 'departmentSearchPage',
-	waitOn: function() {
-		return Meteor.subscribe('departments');
-	}
+	template: 'departmentSearchPage'
 });
 
 Router.route('/addDepartment', {
@@ -11,12 +8,12 @@ Router.route('/addDepartment', {
 
 Router.route('/department/:departmentId', {
 	template: 'editDepartmentPage',
-	waitOn: function() {
-		return Meteor.subscribe('departments');
-	},
 	data: function() {
 		var departmentId = this.params.departmentId;
 		return Departments.findOne({ _id: departmentId });
 	}
+});
 
+Router.route('/departments/add', {
+	template: 'addDepartmentForm'
 });

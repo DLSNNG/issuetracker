@@ -13,4 +13,8 @@ if (Meteor.isClient) {
 			return Meteor.users.findOne({ _id: userId });
 		}
 	});
+
+	Router.route('/users/add', {
+		template: 'addUserForm'
+	});
 }

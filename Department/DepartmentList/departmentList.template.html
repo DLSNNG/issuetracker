@@ -17,7 +17,7 @@
 <template name="departmentListItem">
 	<li class="list-group-item">
 		{{name}}
-		{{#if isInRole 'dept-admin' name }}
+		{{#if isInRole 'Admin' name }}
 			<a href="/department/{{_id}}">
 				<button class="btn btn-xs btn-primary pull-right">Edit</button>
 			</a>

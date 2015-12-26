@@ -1,7 +1,7 @@
 Meteor.methods({
     'addCategory': function(category){
     	var loggedInUser = Meteor.user();
-		if(Roles.userIsInRole(loggedInUser, ['admin', 'super-user'])) {
+		if(Roles.userIsInRole(loggedInUser, ['Admin', 'Super User'])) {
 			//create department
 			var catId = Categories.insert(category);
 

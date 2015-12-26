@@ -21,7 +21,7 @@ if (Meteor.isServer) {
     if(!loggedInUser) {
       return false;
     }
-    if(Roles.userIsInRole(loggedInUser, ['admin'])) {
+    if(Roles.userIsInRole(loggedInUser, ['Admin'])) {
       return Departments.find({});
     }
     else {

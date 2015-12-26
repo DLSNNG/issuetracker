@@ -1,0 +1,17 @@
+<template name="searchBarPage">
+	{{> searchBar collection='Tickets' field='title'}}
+</template>
+    
+
+<template name="searchBar">
+	<input type="text" class="form-control" id="{{collection}}-search-string" placeholder="{{collection}} to search for" autocomplete="off" list="select-{{collection}}">
+	<datalist id="select-{{collection}}" name="select{{collection}}">
+		{{#each collectionData}}
+			{{> collectionOption doc=this field=../field}}
+		{{/each}}
+	</datalist>
+</template>
+
+<template name="collectionOption">
+	<option id="{{show}}" data-id={{_id}} value={{show}}></option>
+</template>

@@ -1,7 +1,7 @@
 Meteor.methods({
 	'addDepartment': function(name){
 		var loggedInUser = Meteor.user();
-		if(Roles.userIsInRole(loggedInUser, ['admin'])) {
+		if(Roles.userIsInRole(loggedInUser, ['Admin'])) {
 			//create department
 			var deptId = Departments.insert({
 				name: name
