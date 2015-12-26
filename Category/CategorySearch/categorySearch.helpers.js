@@ -11,19 +11,12 @@ if (Meteor.isClient) {
 	});
 
 	Template.categorySearchPage.events({
-	    "change #category-search-name": function(event, template) {
+	    "change #Categories-search-string": function(event, template) {
 	    	event.preventDefault();
-	        var selected = document.getElementById('category-search-name').value;
+	        var selected = document.getElementById('Categories-search-string').value;
 	        var search = new RegExp('^'+selected, 'i');
 	        template.searchParams.set({ name: search });
 	        console.log(template.searchParams.get());
 	    }
-	});
-
-	Template.categorySearch.helpers({
-		categories: function() {
-			Meteor.subscribe('categories');
-			return Categories.find({});
-		}
 	});
 }

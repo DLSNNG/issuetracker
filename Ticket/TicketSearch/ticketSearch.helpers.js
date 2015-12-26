@@ -1,12 +1,5 @@
 if (Meteor.isClient) {
 
-	Template.ticketSearch.helpers({
-		categories: function() {
-			Meteor.subscribe('tickets');
-			return Tickets.find({});
-		}
-	});
-
 	Template.ticketSearchPage.onCreated(function(){
 		this.searchParams = new ReactiveVar({});
 	});
@@ -18,18 +11,18 @@ if (Meteor.isClient) {
 	});
 
 	Template.ticketSearchPage.events({
-	    "change #category-search-name": function(event, template) {
+	    "change #Categories-search-string": function(event, template) {
 	    	event.preventDefault();
-	        var selected = document.getElementById('category-search-name').value;
+	        var selected = document.getElementById('Categories-search-string').value;
 	        var search = new RegExp('^' + selected, 'i');
 	        var params = template.searchParams.get();
 	        params['category.name'] = search;
 	        template.searchParams.set(params);
 	        console.log(template.searchParams.get());
 	    },
-	    "change #ticket-search-name": function(event, template) {
+	    "change #Tickets-search-string": function(event, template) {
 	    	event.preventDefault();
-	        var selected = document.getElementById('ticket-search-name').value;
+	        var selected = document.getElementById('Tickets-search-string').value;
 	        var search = new RegExp('^' + selected, 'i');
 	        var params = template.searchParams.get();
 	        params['title'] = search;

@@ -1,7 +1,7 @@
 <template name="ticketSearchPage">
 	<h3>Ticket Search</h3>
-	{{> ticketSearch}}
-	{{> categorySearch}}
+	{{> searchBar collection='Tickets' field='title'}}
+	{{> searchBar collection='Categories' field='name'}}
 	<div class="row">
 		<div class="col-xs-6">
 		{{> dateStart}}
@@ -12,18 +12,4 @@
 	</div>
 	<hr>
 	{{> ticketList searchParams = searchParams}}
-</template>
-
-
-<template name="ticketSearch">
-	<input type="text" class="form-control" id="ticket-search-name" placeholder="Title to search for" autocomplete="off" list="select-ticket">
-	<datalist id="select-ticket" name="selectTicket">
-	  {{#each tickets}}
-	  	{{> ticketOption}}
-	  {{/each}}
-	</datalist>
-</template>
-
-<template name="ticketOption">
-	<option id="{{name}}" data-id={{_id}} value={{name}}></option>
 </template>

@@ -2,7 +2,7 @@ if (Meteor.isClient) {
 	Template.addTicketForm.events({
 	    "submit .add-ticket-form": function(event, template) {
 	    	event.preventDefault();
-	    	var categorySelected = document.getElementById('category-search-name').value;
+	    	var categorySelected = document.getElementById('Categories-search-string').value;
 	    	var categoryId = document.getElementById(categorySelected).dataset.id;
 	    	var category = Categories.findOne({ _id: categoryId });
 	        var ticket = {

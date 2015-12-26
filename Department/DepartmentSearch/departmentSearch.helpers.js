@@ -11,19 +11,12 @@ if (Meteor.isClient) {
 	});
 
 	Template.departmentSearchPage.events({
-	    "change #department-search-name": function(event, template) {
+	    "change #Departments-search-string": function(event, template) {
 	    	event.preventDefault();
-	        var selected = document.getElementById('department-search-name').value;
+	        var selected = document.getElementById('Departments-search-string').value;
 	        var search = new RegExp('^'+selected, 'i');
 	        template.searchParams.set({ name: search });
 	        console.log(template.searchParams.get());
 	    }
-	});
-
-	Template.departmentSearch.helpers({
-		departments: function() {
-			Meteor.subscribe('departments');
-			return Departments.find({});
-		}
 	});
 }
