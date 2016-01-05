@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 	});
 
 	Template.ticketSearchPage.events({
-	    "change #Categories-search-string": function(event, template) {
+	    "input #Categories-search-string": function(event, template) {
 	    	event.preventDefault();
 	        var selected = document.getElementById('Categories-search-string').value;
 	        var search = new RegExp('^' + selected, 'i');
@@ -20,7 +20,7 @@ if (Meteor.isClient) {
 	        template.searchParams.set(params);
 	        console.log(template.searchParams.get());
 	    },
-	    "change #Tickets-search-string": function(event, template) {
+	    "input #Tickets-search-string": function(event, template) {
 	    	event.preventDefault();
 	        var selected = document.getElementById('Tickets-search-string').value;
 	        var search = new RegExp('^' + selected, 'i');
@@ -29,7 +29,17 @@ if (Meteor.isClient) {
 	        template.searchParams.set(params);
 	        console.log(template.searchParams.get());
 	    },
-	    "change #date-start": function(event, template) {
+	    "input #Users-search-string": function(event, template) {
+	    	event.preventDefault();
+	        var selected = document.getElementById('Users-search-string').value;
+	        var id = document.getElementById(selected) ? document.getElementById(selected).dataset.id : selected;
+	        var search = new RegExp('^' + id, 'i');
+	        var params = template.searchParams.get();
+	        params['createdBy'] = search;
+	        template.searchParams.set(params);
+	        console.log(template.searchParams.get());
+	    },
+	    "input #date-start": function(event, template) {
 	    	event.preventDefault();
 	    	//get start and end dates
 	        var start = document.getElementById('date-start').value;
@@ -48,7 +58,7 @@ if (Meteor.isClient) {
 	        template.searchParams.set(params);
 	        console.log(template.searchParams.get());
 	    },
-	    "change #date-end": function(event, template) {
+	    "input #date-end": function(event, template) {
 	    	event.preventDefault();
 	    	//get start and end dates
 	        var start = document.getElementById('date-start').value;

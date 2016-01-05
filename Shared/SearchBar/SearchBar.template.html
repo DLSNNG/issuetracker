@@ -1,10 +1,10 @@
 <template name="searchBarPage">
-	{{> searchBar collection='Tickets' field='title'}}
+	{{> list baseUrl='ticket' collection='Tickets' field='title'}}
 </template>
     
 
 <template name="searchBar">
-	<input type="text" class="form-control" id="{{collection}}-search-string" placeholder="{{collection}} to search for" autocomplete="off" list="select-{{collection}}">
+	<input type="text" class="form-control search-bar" id="{{collection}}-search-string" placeholder="{{placeholder}}" autocomplete="off" list="select-{{collection}}">
 	<datalist id="select-{{collection}}" name="select{{collection}}">
 		{{#each collectionData}}
 			{{> collectionOption doc=this field=../field}}

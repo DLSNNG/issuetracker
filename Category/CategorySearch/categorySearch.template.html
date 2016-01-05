@@ -1,6 +1,7 @@
 <template name="categorySearchPage">
+	<div class="pull-right">
+		{{> addButton text='Add Category' href='/categories/add'}}
+	</div>
 	<h3>Categories</h3>
-	{{> searchBar collection='Categories' field='name'}}
-	<hr>
-	{{> categoryList searchParams = searchParams}}
+	{{> searchList baseUrl='category' collection='Categories' field='name'}}
 </template>

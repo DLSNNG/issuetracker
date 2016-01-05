@@ -1,0 +1,5 @@
+<template name="searchList">
+	{{> searchBar collection=collection field=field}}
+	<hr>
+	{{> list baseUrl=baseUrl collection=collection field=field searchParams=searchParams}}
+</template>

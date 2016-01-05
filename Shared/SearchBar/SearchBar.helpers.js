@@ -1,9 +1,12 @@
 if (Meteor.isClient) {
 	Template.searchBar.helpers({
 		collectionData: function() {
-			Meteor.subscribe(this.collection.toLowerCase());
+			Meteor.subscribe(this.subscription || this.collection.toLowerCase());
 			var collectionObject = window[this.collection];
 			return collectionObject.find({});
+		},
+		placeholder: function() {
+			return this.placeholder || this.collection + " to search for.."
 		}
 	});
 

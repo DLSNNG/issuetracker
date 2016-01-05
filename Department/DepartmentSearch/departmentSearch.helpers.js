@@ -11,7 +11,7 @@ if (Meteor.isClient) {
 	});
 
 	Template.departmentSearchPage.events({
-	    "change #Departments-search-string": function(event, template) {
+	    "input #Departments-search-string": function(event, template) {
 	    	event.preventDefault();
 	        var selected = document.getElementById('Departments-search-string').value;
 	        var search = new RegExp('^'+selected, 'i');

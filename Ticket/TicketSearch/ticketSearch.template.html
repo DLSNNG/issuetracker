@@ -1,12 +1,16 @@
 <template name="ticketSearchPage">
+	<div class="pull-right">
+		{{> addButton text='Add Ticket' href='/tickets/add'}}
+	</div>
 	<h3>Ticket Search</h3>
-	{{> searchBar collection='Tickets' field='title'}}
-	{{> searchBar collection='Categories' field='name'}}
+	{{> searchBar collection='Tickets' field='title' placeholder='Title'}}
+	{{> searchBar collection='Categories' field='name' placeholder='Category'}}
+	{{> searchBar collection='Users' field='username' placeholder='Created By'}}
 	<div class="row">
-		<div class="col-xs-6">
+		<div class="col-md-6">
 		{{> dateStart}}
 		</div>
-		<div class="col-xs-6">
+		<div class="col-md-6">
 			{{> dateEnd}}
 		</div>
 	</div>

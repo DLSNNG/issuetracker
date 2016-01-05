@@ -1,0 +1,11 @@
+<template name="list">
+	<ul class="list-group">
+		{{#each listItems}}
+			{{> listItem baseUrl=../baseUrl field=../field _id=_id}}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="listItem">
+	<a href="/{{baseUrl}}/{{_id}}"><li class="list-group-item">{{text}}</li></a>
+</template>

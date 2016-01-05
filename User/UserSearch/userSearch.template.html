@@ -1,8 +1,7 @@
 <template name="userSearchPage">
+	<div class="pull-right">{{> addButton text='Add User' href='/users/add'}}</div>
 	<h3>Users</h3>
-	{{> userSearch}}
-	<hr>
-	{{> userList searchParams = searchParams}}
+	{{> searchList baseUrl='user' collection='Users' field='username'}}
 </template>
     
 
